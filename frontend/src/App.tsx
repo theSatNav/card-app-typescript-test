@@ -29,7 +29,7 @@ export default function App() {
   };
   return (
     <section className={`${darkMode && "dark"}`}>
-      <section className="bg-white dark:bg-black">
+      <section className="bg-white dark:bg-black h-screen w-screen">
         <Router>
           <EntryProvider>
             <div>
