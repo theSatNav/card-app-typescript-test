@@ -32,6 +32,12 @@ export default function AllEntries() {
             <p className="text-center text-black dark:text-white text-lg font-light md:mt-2 md:mb-4 mt-1 mb-3">
               {entry.description}
             </p>
+            <p className="text-center text-black dark:text-white text-lg font-light md:mt-2 md:mb-4 mt-1 mb-3">
+              Scheduled for:
+              <time className="text-right  text-black dark:text-white text-sm md:text-lg">
+                {new Date(entry.scheduled_date.toString()).toLocaleDateString()}
+              </time>
+            </p>
             <section className="flex items-center justify-between flex-col md:flex-row pt-2 md:pt-0">
               <div className="flex justify-center">
                 <button

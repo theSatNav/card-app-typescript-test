@@ -5,7 +5,7 @@ import { EntryContext } from "../utilities/globalContext";
 
 export default function EditEntry() {
   const { id } = useParams();
-  const emptyEntry: Entry = { title: "", description: "", created_at: new Date() };
+  const emptyEntry: Entry = { title: "", description: "", created_at: new Date(), scheduled_date: new Date() };
 
   const { updateEntry, entries } = useContext(EntryContext) as EntryContextType;
   const [newEntry, setNewEntry] = useState<Entry>(emptyEntry);
@@ -45,6 +45,13 @@ export default function EditEntry() {
         type="date"
         name="created_at"
         value={new Date(newEntry.created_at).toISOString().split("T")[0]}
+        onChange={handleInputChange}
+      />
+      <input
+        className="p-3 rounded-md"
+        type="date"
+        name="scheduled_date"
+        value={new Date(newEntry.scheduled_date).toISOString().split("T")[0]}
         onChange={handleInputChange}
       />
       <button
