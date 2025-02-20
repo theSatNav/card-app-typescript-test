@@ -6,7 +6,6 @@ import { useState } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Dialog from "./components/Dialog";
 import NavBar from "./components/NavBar";
-import Settings from "./components/Settings";
 import AllEntries from "./routes/AllEntries";
 import EditEntry from "./routes/EditEntry";
 import NewEntry from "./routes/NewEntry";
@@ -30,7 +29,7 @@ export default function App() {
   };
   return (
     <section className={`${darkMode && "dark"}`}>
-      <div className="bg-white dark:bg-black">
+      <section className="bg-white dark:bg-black">
         <Router>
           <EntryProvider>
             <div>
@@ -67,7 +66,7 @@ export default function App() {
             </Routes>
           </EntryProvider>
         </Router>
-      </div>
+      </section>
     </section>
   );
 }

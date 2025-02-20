@@ -43,7 +43,7 @@ export default function NewEntry() {
         value={new Date(newEntry.created_at).toISOString().split("T")[0]}
         onChange={handleInputChange}
       />
-      Scheduled For: 
+      Scheduled For:
       <input
         className="p-3 rounded-md  bg-white dark:bg-gray-600"
         type="date"
