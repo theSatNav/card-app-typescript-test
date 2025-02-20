@@ -38,7 +38,7 @@ export default function AllEntries() {
                   onClick={() => {
                     deleteEntry(entry.id as string);
                   }}
-                  className="m-1 md:m-2 p-1 font-semibold rounded-md bg-red-500 dark:bg-gray-500 hover:bg-red-700"
+                  className="m-1 md:m-2 p-1 font-semibold rounded-md bg-red-500 dark:bg-gray-100 hover:bg-red-700"
                 >
                   ✖
                 </button>
@@ -46,7 +46,7 @@ export default function AllEntries() {
                   onClick={() => {
                     navigate(`/edit/${entry.id}`, { replace: true });
                   }}
-                  className="m-1 md:m-2 p-1 font-semibold rounded-md bg-blue-500 dark:bg-gray-500 hover:bg-blue-700"
+                  className="m-1 md:m-2 p-1 font-semibold rounded-md bg-blue-500 dark:bg-gray-100 hover:bg-blue-700"
                 >
                   🖊
                 </button>

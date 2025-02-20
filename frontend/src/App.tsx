@@ -12,7 +12,6 @@ import NewEntry from "./routes/NewEntry";
 import { EntryProvider } from "./utilities/globalContext";
 
 export default function App() {
-
   return (
     <section>
       <Router>
