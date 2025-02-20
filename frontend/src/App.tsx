@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar from './components/NavBar'
+import Settings from "./components/Settings";
 import AllEntries from './routes/AllEntries'
 import NewEntry from './routes/NewEntry'
 import EditEntry from './routes/EditEntry'
@@ -15,6 +16,7 @@ export default function App() {
     <section>
   <Router>
     <EntryProvider>
+    <Settings></Settings>
     <NavBar></NavBar>
       <Routes>
         <Route path="/" element={<AllEntries/>}>
