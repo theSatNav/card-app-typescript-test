@@ -1,23 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Dialog from "./Dialog";
 
 export default function Settings() {
-  //this is for the state of dialog  
+  
+  const storedDarkMode = localStorage.getItem("DARK_MODE");
+
+  //this is for the state of dialog
   const [open, setOpen] = useState(false);
 
   //this is for darkmode state
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(storedDarkMode);
 
   //to set darkmode
   const toggleDark = () => {
-    setDarkMode(true)
-  }
+    setDarkMode(true);
+  };
 
   const toggleLight = () => {
-    setDarkMode(false)
-  }
+    setDarkMode(false);
+  };
 
-  //to set light mode
+  useEffect(() => {
+    localStorage.setItem("DARK_MODE", darkMode);
+  }, [darkMode]);
 
   return (
     <div className={`${darkMode && "dark"}`}>
@@ -31,13 +36,15 @@ export default function Settings() {
       <Dialog open={open} onClose={() => setOpen(false)}>
         <div className="text-center w-56 font-medium text-white dark:text-gray-100">Settings</div>
         <div className="flex gap-4">
-          <button className="m-3 p-4 text-l bg-white dark:bg-gray-300 hover:bg-gray-500 rounded-md font-medium text-black dark:text-gray-800"
-          onClick={toggleLight}
+          <button
+            className="m-3 p-4 text-l bg-white dark:bg-gray-300 hover:bg-gray-500 rounded-md font-medium text-black dark:text-gray-800"
+            onClick={toggleLight}
           >
             Light Mode
           </button>
-          <button className="m-3 p-4 text-l bg-black dark:bg-gray-900 hover:bg-gray-500 rounded-md font-medium text-white dark:text-gray-200"
-          onClick={toggleDark}
+          <button
+            className="m-3 p-4 text-l bg-black dark:bg-gray-900 hover:bg-gray-500 rounded-md font-medium text-white dark:text-gray-200"
+            onClick={toggleDark}
           >
             Dark Mode
           </button>
